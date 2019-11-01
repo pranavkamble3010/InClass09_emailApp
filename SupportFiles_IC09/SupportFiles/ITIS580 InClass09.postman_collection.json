@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "7a8a6ce1-4aa7-4ed0-86f3-740f984ac5ea",
+		"name": "ITIS580 Midterm Inbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bff89c7e-f5ec-4546-b2ac-545c26191816",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "user@test1.dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-234-222-229.compute-1.amazonaws.com/api/login",
+					"protocol": "http",
+					"host": [
+						"ec2-18-234-222-229",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "user@test1.dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "fname",
+							"value": "Alice",
+							"type": "text"
+						},
+						{
+							"key": "lname",
+							"value": "Smith",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-234-222-229.compute-1.amazonaws.com/api/signup",
+					"protocol": "http",
+					"host": [
+						"ec2-18-234-222-229",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/inbox",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BEARER eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Mzk5MTQ0NjQsImV4cCI6MTU3MTQ1MDQ2NCwianRpIjoiMzNiQWRObkJ4R2MyZ243cWt5VDR5SyIsInVzZXIiOjJ9.5rvG9jVyhReR2yorxknku_PPdx_fc4eLwOg9uCngvQ8"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "newFile",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-234-222-229.compute-1.amazonaws.com/api/inbox",
+					"protocol": "http",
+					"host": [
+						"ec2-18-234-222-229",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"inbox"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BEARER eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Mzk2MTYwNTEsImV4cCI6MTU3MTE1MjA1MSwianRpIjoiMnZQbTZqcnpLSlJUTExyTWMzYTg5ZSIsInVzZXIiOjF9.zMb9EvAvjXm1pXeMFtCCVaDk7gvLoInouLeXzMlKcVM"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "newFile",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-234-222-229.compute-1.amazonaws.com/api/users",
+					"protocol": "http",
+					"host": [
+						"ec2-18-234-222-229",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/inbox/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BEARER eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1Mzk5MTU3ODcsImV4cCI6MTU3MTQ1MTc4NywianRpIjoiMWJDRkZtYUJubHB4TVFNdW9PckFlUCIsInVzZXIiOjJ9.hzPO7cKQoZZA9ahU3IcJw3fkwA2sdcGx_12ufSwp0Nc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "receiver_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "Hello",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "Hi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-234-222-229.compute-1.amazonaws.com/api/inbox/add",
+					"protocol": "http",
+					"host": [
+						"ec2-18-234-222-229",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"inbox",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/inbox/delete/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "BEARER eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDAwMDMxMTUsImV4cCI6MTU3MTUzOTExNSwianRpIjoiNDZrcnZVWHpvWXNpdDNCTXBLdVg4aiIsInVzZXIiOjJ9.Z-b_rZ_kqou--3R9Ye6INWD2Hmu9FULnACVbr77KK_A"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "newFile",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-234-222-229.compute-1.amazonaws.com/api/inbox/delete/2",
+					"protocol": "http",
+					"host": [
+						"ec2-18-234-222-229",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"inbox",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4a5d3acb-3c1c-461e-a324-ffe7b840e9bd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "de1aabfe-92a1-47da-9385-e3aaecfb0908",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
